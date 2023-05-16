@@ -29,18 +29,14 @@ const randomColor = () => {
 }
 
 const btnfn = () => {
-    if (text.value !== '') {
-        addList.value.push(
-            {
-                event: text.value,
-                color: randomColor().value
-            }
-        )
-        text.value = ''
-        console.table(addList.value)
-    } else {
-        window.alert('Plz enter something!')
-    }
+    text.value !== '' ? addList.value.push(
+        {
+            event: text.value,
+            color: randomColor().value
+        }
+    ) ? text.value = '' : '' : window.alert('Plz input something!')
+
+    console.table(addList.value)
 }
 
 watch(

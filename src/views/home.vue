@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 
-import box from '@/components/box.vue'
+import inputZone from '@/components/inputZone.vue'
 import todoList from '@/components/todo-list.vue'
 
 const todoListEvt = reactive(
@@ -24,7 +24,7 @@ const todoListEvt = reactive(
 <template>
     <div class="wraper">
         <slot name="text"></slot>
-        <box :todoListEvt="todoListEvt"></box>
+        <inputZone :todoListEvt="todoListEvt"></inputZone>
         <hr>
         <ul class="lsit">
             <todo-list :todoListEvt="todoListEvt"></todo-list>
