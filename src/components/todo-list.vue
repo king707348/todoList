@@ -1,17 +1,17 @@
 <script setup>
-
+    import { ref } from 'vue'
     const prop = defineProps({
         todoListEvt:Array
     })
+    const todoListEvt = ref(prop.todoListEvt)
 
-    const del = (e) =>{
-        prop.todoListEvt.splice(e,1)
-    }
+    const del = (e) => todoListEvt.value.splice(e,1)
+    
 
 </script>
 
 <template>
-    <li v-for="(item,index) in prop.todoListEvt" :key="item" :title="item.event" >
+    <li v-for="(item,index) in todoListEvt" :key="item" :title="item.event" >
         <span class="doing-evt" :style="{color:item.color}">{{ index + 1 }}. {{ item.event.slice(0,1).toUpperCase() +  item.event.slice(1)}}</span>
         <span class="close" :title="`Cancel ${item}` " @click="del(index)">X</span>
     </li>

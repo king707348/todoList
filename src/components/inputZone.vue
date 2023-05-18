@@ -1,7 +1,5 @@
 <script setup>
 import { ref, watch } from 'vue'
-import { storeToRefs } from 'pinia';
-import { useCounterStore } from '@/stores/counter.js';
 
 const prop = defineProps({
     todoListEvt: Array
@@ -9,8 +7,6 @@ const prop = defineProps({
 const addList = ref(prop.todoListEvt)
 
 const text = ref('')
-const counterStore = useCounterStore()
-const {  } = storeToRefs(counterStore)
 const evtDefaultColor = ref('rgb(0,0,0)')
 
 const randomColor = () => {
@@ -33,7 +29,8 @@ const btnfn = () => {
         addList.value.push(
             {
                 event: text.value,
-                color: randomColor().value
+                color: randomColor().value,
+                isEvtDone: false
             }
         )
         text.value = ''
