@@ -32,6 +32,7 @@ const getListEvt = (isDone) => {
 </script>
 
 <template>
+<<<<<<< HEAD
     <section class="main">
         <div class="wraper">
             <slot name="text"></slot>
@@ -48,6 +49,17 @@ const getListEvt = (isDone) => {
             </ul>
         </div>
     </section>
+=======
+    <div class="wraper">
+        <slot name="text"></slot>
+        <inputZone :todoListEvt="todoListEvt"></inputZone>
+        <hr>
+        <ul class="lsit">
+            <todo-list :todoListEvt="todoListEvt"></todo-list>
+        </ul>
+        <slot></slot>
+    </div>
+>>>>>>> 98263cae81a81a5f89f28bdb66e4dc592c5413f3
 </template>
 
 <style lang="scss" scoped >

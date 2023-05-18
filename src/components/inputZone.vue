@@ -29,8 +29,7 @@ const btnfn = () => {
         addList.value.push(
             {
                 event: text.value,
-                color: randomColor().value,
-                isEvtDone: false
+                color: randomColor().value
             }
         )
         text.value = ''
