@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 
 import inputZone from '@/components/inputZone.vue'
 import todoList from '@/components/todo-list.vue'
@@ -28,11 +28,9 @@ const todoListEvt = reactive(
 const getListEvt = (isDone) => {
     return todoListEvt.filter((item) => item.isEvtDone == isDone)
 }
-
 </script>
 
 <template>
-<<<<<<< HEAD
     <section class="main">
         <div class="wraper">
             <slot name="text"></slot>
@@ -41,7 +39,6 @@ const getListEvt = (isDone) => {
             <ul class="lsit">
                 <todo-list :todoListEvt="getListEvt(false)"></todo-list>
             </ul>
-
         </div>
         <div class="wraper">
             <ul class="done">
@@ -49,19 +46,7 @@ const getListEvt = (isDone) => {
             </ul>
         </div>
     </section>
-=======
-    <div class="wraper">
-        <slot name="text"></slot>
-        <inputZone :todoListEvt="todoListEvt"></inputZone>
-        <hr>
-        <ul class="lsit">
-            <todo-list :todoListEvt="todoListEvt"></todo-list>
-        </ul>
-        <slot></slot>
-    </div>
->>>>>>> 98263cae81a81a5f89f28bdb66e4dc592c5413f3
 </template>
-
 <style lang="scss" scoped >
 .main{
     width: 100%;
